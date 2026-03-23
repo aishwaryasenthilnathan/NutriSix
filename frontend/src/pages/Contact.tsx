@@ -44,7 +44,7 @@ const Contact = () => {
             {[
               { icon: MapPin, label: t("Address", "முகவரி"), value: "1/228, Moolakadu, Tho. Pachudayampalayam,\nNamakkal, Tamil Nadu 637406" },
               { icon: Phone, label: t("Phone", "தொலைபேசி"), value: "+91 99624 00092" },
-              { icon: Mail, label: t("Email", "மின்னஞ்சல்"), value: "info@evenmorefoods.com" },
+              { icon: Mail, label: t("Email", "மின்னஞ்சல்"), value: "info@Long Life Nutrition.com" },
             ].map((item, i) => (
               <div key={i} className="flex gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">

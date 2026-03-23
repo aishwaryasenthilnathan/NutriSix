@@ -22,7 +22,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-foreground">
-          EvenMore<span className="text-primary">Foods</span>
+         Long Life<span className="text-primary">Nutrition</span>
         </Link>
 
         {/* Desktop Nav */}

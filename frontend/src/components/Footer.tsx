@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <h3 className="font-serif text-2xl font-bold mb-4">
-              EvenMore<span className="opacity-70">Foods</span>
+              Long Life <span className="opacity-70">Nutrition</span>
             </h3>
             <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-sm">
               {t(
@@ -58,13 +58,13 @@ const Footer = () => {
             <div className="space-y-2.5 text-sm text-primary-foreground/60">
               <p>Namakkal, Tamil Nadu 637406</p>
               <p>+91 99624 00092</p>
-              <p>info@evenmorefoods.com</p>
+              <p>info@LongLifeNutrition.com</p>
             </div>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center text-xs text-primary-foreground/40">
-          © {new Date().getFullYear()} EvenMore Foods. {t("All rights reserved.", "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.")}
+          © {new Date().getFullYear()} Long Life Nutrition. {t("All rights reserved.", "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.")}
         </div>
       </div>
     </footer>

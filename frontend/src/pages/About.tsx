@@ -70,8 +70,8 @@ const About = () => {
             <div className="space-y-4 text-foreground/80 leading-relaxed text-sm">
               <p>
                 {t(
-                  "EvenMore Foods was born from a simple desire — to bring the authentic taste of our grandmother's kitchen to families everywhere. Growing up in the heart of Tamil Nadu, we were surrounded by the rich aromas of freshly ground spices, cold-pressed oils, and traditional sweets.",
-                  "EvenMore Foods ஒரு எளிய ஆசையிலிருந்து பிறந்தது — எங்கள் பாட்டியின் சமையலறையின் உண்மையான சுவையை எல்லா இடங்களிலும் உள்ள குடும்பங்களுக்கு கொண்டு வருவது."
+                  "Long Life  Nutrition was born from a simple desire — to bring the authentic taste of our grandmother's kitchen to families everywhere. Growing up in the heart of Tamil Nadu, we were surrounded by the rich aromas of freshly ground spices, cold-pressed oils, and traditional sweets.",
+                  "Long Life  Nutrition ஒரு எளிய ஆசையிலிருந்து பிறந்தது — எங்கள் பாட்டியின் சமையலறையின் உண்மையான சுவையை எல்லா இடங்களிலும் உள்ள குடும்பங்களுக்கு கொண்டு வருவது."
                 )}
               </p>
               <p>
