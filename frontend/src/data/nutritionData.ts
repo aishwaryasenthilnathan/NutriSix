@@ -1,0 +1,155 @@
+export interface NutritionRow {
+  nutrient: string;
+  nutrientTa: string;
+  value: string;
+  dv?: number; // % daily value
+}
+
+const baseNutrition: Record<string, NutritionRow[]> = {
+  "Muesli & Granola": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "380 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "9g", dv: 12 },
+    { nutrient: "Saturated Fat", nutrientTa: "நிறைவுற்ற கொழுப்பு", value: "1.5g", dv: 8 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "62g", dv: 23 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "8g", dv: 29 },
+    { nutrient: "Sugars", nutrientTa: "சர்க்கரை", value: "12g" },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "10g", dv: 20 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "4.5mg", dv: 25 },
+    { nutrient: "Calcium", nutrientTa: "கால்சியம்", value: "60mg", dv: 5 },
+    { nutrient: "Potassium", nutrientTa: "பொட்டாசியம்", value: "280mg", dv: 6 },
+  ],
+  "Pan Cake": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "340 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "5g", dv: 6 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "65g", dv: 24 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "5g", dv: 18 },
+    { nutrient: "Sugars", nutrientTa: "சர்க்கரை", value: "8g" },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "8g", dv: 16 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "3.2mg", dv: 18 },
+    { nutrient: "Calcium", nutrientTa: "கால்சியம்", value: "45mg", dv: 3 },
+  ],
+  "Ready to Cook": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "350 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "6g", dv: 8 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "60g", dv: 22 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "6g", dv: 21 },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "12g", dv: 24 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "4mg", dv: 22 },
+    { nutrient: "Calcium", nutrientTa: "கால்சியம்", value: "55mg", dv: 4 },
+    { nutrient: "Phosphorus", nutrientTa: "பாஸ்பரஸ்", value: "180mg", dv: 14 },
+  ],
+  "Sweeteners": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "383 kcal" },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "95g", dv: 35 },
+    { nutrient: "Sugars", nutrientTa: "சர்க்கரை", value: "85g" },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "11mg", dv: 61 },
+    { nutrient: "Calcium", nutrientTa: "கால்சியம்", value: "85mg", dv: 7 },
+    { nutrient: "Potassium", nutrientTa: "பொட்டாசியம்", value: "460mg", dv: 10 },
+    { nutrient: "Magnesium", nutrientTa: "மெக்னீசியம்", value: "70mg", dv: 17 },
+  ],
+  "Flakes": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "340 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "3g", dv: 4 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "72g", dv: 26 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "6g", dv: 21 },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "8g", dv: 16 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "3.5mg", dv: 19 },
+    { nutrient: "Calcium", nutrientTa: "கால்சியம்", value: "40mg", dv: 3 },
+    { nutrient: "Zinc", nutrientTa: "துத்தநாகம்", value: "2.1mg", dv: 19 },
+  ],
+  "Millet Rava": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "350 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "3.5g", dv: 5 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "70g", dv: 25 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "7g", dv: 25 },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "10g", dv: 20 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "3.8mg", dv: 21 },
+    { nutrient: "Phosphorus", nutrientTa: "பாஸ்பரஸ்", value: "220mg", dv: 18 },
+  ],
+  "Millet Parboiled Rice": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "345 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "2.5g", dv: 3 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "72g", dv: 26 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "8g", dv: 29 },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "11g", dv: 22 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "3.6mg", dv: 20 },
+    { nutrient: "Calcium", nutrientTa: "கால்சியம்", value: "42mg", dv: 3 },
+  ],
+  "Millet Rice": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "351 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "3g", dv: 4 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "70g", dv: 25 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "8g", dv: 29 },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "12g", dv: 24 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "2.8mg", dv: 16 },
+    { nutrient: "Magnesium", nutrientTa: "மெக்னீசியம்", value: "82mg", dv: 20 },
+    { nutrient: "Zinc", nutrientTa: "துத்தநாகம்", value: "1.6mg", dv: 15 },
+  ],
+  "Millet Flour": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "340 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "3.5g", dv: 5 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "68g", dv: 25 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "10g", dv: 36 },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "10g", dv: 20 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "4.2mg", dv: 23 },
+    { nutrient: "Calcium", nutrientTa: "கால்சியம்", value: "350mg", dv: 27 },
+  ],
+  "Instant Puttu": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "330 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "2g", dv: 3 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "72g", dv: 26 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "5g", dv: 18 },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "8g", dv: 16 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "2.5mg", dv: 14 },
+  ],
+  "Malt & Health Mix": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "370 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "8g", dv: 10 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "60g", dv: 22 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "7g", dv: 25 },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "12g", dv: 24 },
+    { nutrient: "Calcium", nutrientTa: "கால்சியம்", value: "344mg", dv: 26 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "5mg", dv: 28 },
+    { nutrient: "Vitamin B12", nutrientTa: "வைட்டமின் B12", value: "0.8μg", dv: 33 },
+  ],
+  "Porridge Mix": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "350 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "4g", dv: 5 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "68g", dv: 25 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "6g", dv: 21 },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "9g", dv: 18 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "5mg", dv: 28 },
+    { nutrient: "Antioxidants", nutrientTa: "ஆன்டிஆக்ஸிடென்ட்", value: "High" },
+  ],
+  "Chappati Mix": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "340 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "3g", dv: 4 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "70g", dv: 25 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "6g", dv: 21 },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "10g", dv: 20 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "4mg", dv: 22 },
+  ],
+  "Traditional Rice": [
+    { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "350 kcal" },
+    { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "2g", dv: 3 },
+    { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "75g", dv: 27 },
+    { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "4g", dv: 14 },
+    { nutrient: "Protein", nutrientTa: "புரதம்", value: "8g", dv: 16 },
+    { nutrient: "Iron", nutrientTa: "இரும்பு", value: "3mg", dv: 17 },
+    { nutrient: "Zinc", nutrientTa: "துத்தநாகம்", value: "2mg", dv: 18 },
+    { nutrient: "Anthocyanins", nutrientTa: "ஆந்தோசயனின்", value: "Present (Kavuni)" },
+  ],
+};
+
+const defaultNutrition: NutritionRow[] = [
+  { nutrient: "Calories", nutrientTa: "கலோரிகள்", value: "350 kcal" },
+  { nutrient: "Total Fat", nutrientTa: "மொத்த கொழுப்பு", value: "3g", dv: 4 },
+  { nutrient: "Total Carbohydrate", nutrientTa: "மொத்த கார்போஹைட்ரேட்", value: "70g", dv: 25 },
+  { nutrient: "Dietary Fiber", nutrientTa: "நார்ச்சத்து", value: "6g", dv: 21 },
+  { nutrient: "Protein", nutrientTa: "புரதம்", value: "10g", dv: 20 },
+  { nutrient: "Iron", nutrientTa: "இரும்பு", value: "3.5mg", dv: 19 },
+];
+
+export function getNutritionData(category: string): NutritionRow[] {
+  return baseNutrition[category] || defaultNutrition;
+}
